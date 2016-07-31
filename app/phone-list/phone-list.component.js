@@ -1,16 +1,9 @@
 'use strict';
 
 //Register 'phoneList' component, along with its associated controller & template
-angular.module("phonecatApp")
+angular.module("phoneList")
 	.component("phoneList", {
-		template:
-			"<ul>" +
-				"<li ng-repeat='phone in $ctrl.phones'>" +
-					"<span>{{phone.name}}</span>" +
-					"<p>{{phone.snippet}}</p>" +
-				"</li>" +
-				"<p>Total number of phones: {{$ctrl.phones.length}}</p>" +
-			"</ul>",
+		templateUrl: 'phone-list/phone-list.template.html',
 		controller: function PhoneListController() {
 			this.phones = [
 				{
