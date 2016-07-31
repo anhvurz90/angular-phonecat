@@ -18,4 +18,6 @@ phonecatApp.controller("PhoneListController",
 				snippet: "The Next, Next Generation tablet."
 			}
 		];
+
+		$scope.name= 'world';
 });
