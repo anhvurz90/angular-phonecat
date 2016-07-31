@@ -12,6 +12,9 @@
   <body>
 
     <!-- Use a custom component to render a list of phones -->
-    <phone-list></phone-list>
+    <div ng-repeat="i in [0, 1, 2]">
+	List {{i + 1}}:<br/>
+	<phone-list></phone-list>
+</div>
   </body>
 </html>

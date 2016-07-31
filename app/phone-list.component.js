@@ -9,6 +9,7 @@ angular.module("phonecatApp")
 					"<span>{{phone.name}}</span>" +
 					"<p>{{phone.snippet}}</p>" +
 				"</li>" +
+				"<p>Total number of phones: {{$ctrl.phones.length}}</p>" +
 			"</ul>",
 		controller: function PhoneListController() {
 			this.phones = [
