@@ -33,11 +33,14 @@ describe('PhoneCat Application', function() {
 	var phoneNameColumn = element.all(by.repeater("phone in $ctrl.phones")
 							.column("phone.name"));
 	      
+	      
 	function getNames() {
 	  return phoneNameColumn.map(function(elem) {
 	    return elem.getText();
 	  });
 	};
+	
+	expect(phoneNameColumn.count()).toBe(20);
 	
 	queryField.sendKeys("tablet");
 	
@@ -53,6 +56,14 @@ describe('PhoneCat Application', function() {
 		"Motorola XOOM\u2122 with Wi-Fi"
 	]);
 	
+      });
+      
+      it("should render phone specific links", function() {
+	      var query = element(by.model("$ctrl.query"));
+	      query.sendKeys("nexus");
+	      
+	      element.all(by.css(".phones li a")).first().click();
+	      expect(browser.getLocationAbsUrl()).toBe("/phones/nexus-s");
       });
   });
 });
