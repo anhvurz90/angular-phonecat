@@ -26,3 +26,6 @@
 </div>
 $ctrl.query value: {{$ctrl.query}} <br/>
 $ctrl.orderProp value: {{$ctrl.orderProp}}
+<pre>
+  {{$ctrl.phones | filter: $ctrl.query | orderBy: $ctrl.orderProp}}
+</pre>
